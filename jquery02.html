@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>jquery練習</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/test.css">
+<script src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>ワソピーフキャラクター診断</h1>
+  </header>
+  <div class="main_img" id="main_img">
+    <img src="./エネル吹き出し2.png" alt="">
+  </div>
+
+  <div class="input_area" id="input_area">
+    <div class="input_a">
+      <p>冒険は好き？</p>
+      <input type="radio" name="a" value="1"> はい
+      <input type="radio" name="a" value="2"> いいえ
+    </div>
+    <div class="input_b">
+      <p>海は好き？</p>
+      <input type="radio" name="b" value="3"> はい
+      <input type="radio" name="b" value="4"> いいえ
+    </div>
+    <div class="input_c">
+      <p>カブトムシは好き？</p>
+      <input type="radio" name="c" value="5"> はい
+      <input type="radio" name="c" value="6"> いいえ
+    </div>
+    <button id="btn">送信</button>
+  </div>
+
+  <!-- <img src="./img/街道.png" alt=""> -->
+  <!-- アウトプットエリア -->
+  <div class="output_area" id="output_area">
+    <!-- todo 結果表示機能の実装。出力数値ごとに、画像を表示-->
+    <div class="output_img" id="output_img"></div>
+    <p id="character_name">キャラクターネーム表示</p>
+    <p id="character_detail">キャラクター説明</p>
+  </div>
+
+<script>
+
+  //二択の質問をいくつか作りラジオボタンで回答してもらう.
+  //その回答結果は数値にして、被らない計算式を作って、その数値によって
+  //配列内にあるものを一つ取り出して、表示する
+  $("#btn").on("click", function(){
+    const no1_st = $('input[name="a"]:checked').val();
+    const no2_st = $('input[name="b"]:checked').val();
+    const no3_st = $('input[name="c"]:checked').val();
+    const no1 = Number(no1_st);
+    const no2 = Number(no2_st);
+    const no3 = Number(no3_st);
+    const total = no1 * no2 * no3
+
+
+
+    if(total == 15){
+      $("#character_name").text("ルフィー");
+      $("#character_detail").text("大食漢で、宴が大好き。自由すぎる性格で周囲を振り回すこともあるが、常識にとらわれずに自分の信念で行動し、仲間からの信頼も絶大");
+      $("#output_img").html('<img src="./img/ルフィー.png" class="rufi">');
+    } else if(total == 18){
+      $("#character_name").text("チョッパー");
+      $("#character_detail").text("船医のトナカイ。褒められると顔にでるほど嬉しがる素直な性格をしており、懸賞金は100ベリー。");
+      $("#output_img").html('<img src="./img/チョッパー.png" id="tyo">');
+    } else if(total == 20){
+      $("#character_name").text("ガイモン");
+      $("#character_detail").text("奇妙な動物や珍獣がいる島で、宝箱にハマッタまま２０年間も宝を守り続けていた元海賊");
+      $("#output_img").html('<img src="./img/ガイモン.png" id="gai">');
+    } else if(total == 24){
+      $("#character_name").text("クンフージュゴン");
+      $("#character_detail").text("アラバスタに群れで棲息する武闘派アニマル。勝負を挑み、負けた相手に弟子入りする習性がある");
+      $("#output_img").html('<img src="./img/クンフージュゴン切り抜き.png" class="kun">');
+    } else if(total == 30){
+      $("#character_name").text("パッパグ");
+      $("#character_detail").text("ファッションブランド”クリミナル”の社長兼デザイナーで、ケイミーのペット兼師匠。 魚人島の一等地「ギョバリーヒルズ」に、一階が直営店の豪邸を構えている。勢いだけでヒト語がしゃべれるようになった");
+      $("#output_img").html('<img src="./img/ぱっぱぐ.png" class="papa">');
+    } else if(total == 36){
+      $("#character_name").text("ブルック");
+      $("#character_detail").text("動くガイコツ。早斬り自慢の剣士であると共に、優れた音楽家で、さまざまな楽器を弾きこなせる。陽気な性格とあいまって、音楽の力で一味を盛り立てる");
+      $("#output_img").html('<img src="./img/ブルック.png"> id="bul');
+    } else if(total == 40){
+      $("#character_name").text("ラブーン");
+      $("#character_detail").text("世界最大のクジラ。「戻ってくる」と言った海賊との約束を信じ、50年以上双子岬で待ち続けている。ルフィと”戦いの約束”を交わし、再会を誓った。");
+      $("#output_img").html('<img src="./img/ラブーン切り抜き.png" id="lub">');
+    } else if(total == 48){
+      $("#character_name").text("カイドウ");
+      $("#character_detail").text("「この世における最強の生物」と称される。悪魔の実の能力で、巨大な青い龍に変身する。");
+      $("#output_img").html('<img src="./img/街道.png" id="kai">');
+    } else{
+      alert("全ての項目に回答してください。");
+    }
+
+    $("#input_area").hide();
+    $("#main_img").hide();
+    $("#output_area").show();
+    
+
+
+    // alert(no1);
+    // alert(no2);
+    // alert(no3);
+    // alert(total);
+  });
+</script>
+
+
+
+</body>
+</html>

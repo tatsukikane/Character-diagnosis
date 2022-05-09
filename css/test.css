@@ -1,0 +1,85 @@
+
+body{
+  background-color: #e6e6fa;
+}
+
+header h1{
+  font-size: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-family: HiraKakuProN-W6;
+}
+.main_img img{
+  width: 100%;
+}
+.input_area{
+  text-align: center;
+}
+.input_area{
+  font-size: 50px;
+}
+.input_area p {
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+.input_area input{
+  transform:scale(3.0);
+  margin-bottom: 30px;
+  top: -7px;
+  position: relative;
+}
+#btn{
+  font-size: 40px;
+  margin-top: 40px;
+  height: 80px;
+  width: 160px;
+  border-radius: 40px;
+  font-family: HiraKakuProN-W6;
+}
+
+/* アウトプットエリア */
+.output_area{
+  display: none;
+}
+.output_img {
+  background-image: url(../zoom\ リサイズ.png);
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  position: relative;
+  text-align: center;
+}
+.output_img img{
+  z-index: 1;
+}
+
+.output_area p{
+  text-align: center;
+}
+#character_name{
+  font-size: 60px;
+}
+#character_detail{
+  font-size: 40px;
+  padding-top: 40px;
+}
+
+
+
+/* キャラ別画像 */
+.rufi{
+  width: 600px;
+}
+.kun{
+  width: 600px;
+}
+.papa{
+   width: 600px;
+}
+#lub{
+  width: 600px;
+}
+#kai{
+  width: 580px;
+}
